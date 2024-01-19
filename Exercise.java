@@ -6,6 +6,10 @@ public class Exercise {
     int age = 19;
     char gender = 'm';
 
+    getPersonalInformation(name, age, gender);
+  }
+
+  public static void getPersonalInformation(String name, int age, char gender){
     System.out.println(name);
     System.out.println(age);
     System.out.println(gender);
