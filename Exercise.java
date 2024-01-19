@@ -10,8 +10,8 @@ public class Exercise {
   }
 
   public static void getPersonalInformation(String name, int age, char gender){
-    System.out.println(name);
-    System.out.println(age);
-    System.out.println(gender);
+    System.out.println("Name: " + name);
+    System.out.println("Alter: " + age);
+    System.out.println("Geschlecht: " + gender);
   }
 }
