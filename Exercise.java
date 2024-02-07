@@ -1,25 +1,24 @@
-public class Exercise {
-  public static void main(String[] args) {
-    int[] one = { 1, 2, 3, 4 };
-    int[] two = { 5, 6, 7, 8 };
+public class Exercise{
+	public static void main(String[] args){
+		int[][] multiDimArray = {
+    { 5, 8, 2, 7 },
+    { 9, 6, 10, 8 },
+    { 10, 2, 7, 5 },
+    { 1, 9, 5, 4 } };
 		
-		int[] neu = Exercise.merge(one, two);
-		for(int number : neu){
-			System.out.println(number);
+		for(int[] element : multiDimArray){
+			int max = 0;
+			int min = 100;
+
+			for(int i : element){
+				if(i > max){
+					max = i;
+				}
+				if(i < min){
+					min = i;
+				}
+			}
+			System.out.println("MAX: " + max + " MIN: " + min);
 		}
-  }
-  public static int[] merge(int[] first, int[] second) {
-    int laenge = first.length + second.length;
-		int[] neueListe = new int[laenge];
-		int i = 0;
-		for(int number : first){
-			neueListe[i] = number;
-			i++;
-		}
-		for(int number : second){
-			neueListe[i] = number;
-			i++;
-		}
-		return neueListe;
-  }
+	}
 }
