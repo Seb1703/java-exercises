@@ -1,12 +1,15 @@
 public class Exercise {
 
   public static void main(String[] args) {
+    System.out.println(Vehicle.getNumberOfVehicles());
 
-    Vehicle vehicle = new Vehicle("Porsche", "911");
+    Vehicle vehicle1 = new Vehicle("Porsche", "911");
+    System.out.println(vehicle1.toString());
+    Vehicle vehicle2 = new Vehicle("MAN", "TGX");
+    System.out.println(vehicle2.toString());
+    Vehicle vehicle3 = new Vehicle("Opel", "Zafira Life");
+    System.out.println(vehicle3.toString());
 
-    vehicle.accelerate(30);
-    vehicle.accelerate(30);
-    vehicle.brake(20);
-    vehicle.accelerate(40);
+    System.out.println(Vehicle.getNumberOfVehicles());
   }
 }

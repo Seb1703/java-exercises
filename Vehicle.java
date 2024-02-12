@@ -4,9 +4,12 @@ public class Vehicle {
   private String model;
   private double speed;
 
+  private static int numberOfVehicles;
+
   public Vehicle(String make, String model) {
     this.make = make;
     this.model = model;
+    Vehicle.numberOfVehicles += 1;
   }
 
   public String getMake() {
@@ -29,5 +32,9 @@ public class Vehicle {
 
   public void print() {
     System.out.println(make + " " + model);
+  }
+
+  public static int getNumberOfVehicles(){
+    return Vehicle.numberOfVehicles;
   }
 }
