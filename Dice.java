@@ -10,7 +10,7 @@ public class Dice {
     rollTheDice();
   }
 
-  public int getId() {
+  public int id() {
     return id;
   }
 
