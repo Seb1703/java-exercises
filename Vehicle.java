@@ -3,11 +3,13 @@ public class Vehicle {
   private String make;
   private String model;
   private double speed;
+  private Engine engine;
   private static int numberOfVehicles;
 
-  public Vehicle(String make, String model) {
+  public Vehicle(String make, String model, Engine engine) {
     this.make = make;
     this.model = model;
+    this.engine = engine;
     numberOfVehicles++;
   }
 
@@ -17,6 +19,10 @@ public class Vehicle {
 
   public String getModel() {
     return model;
+  }
+
+  public Engine engine(){
+    return engine;
   }
 
   public static int getNumberOfVehicles() {
@@ -34,6 +40,6 @@ public class Vehicle {
   }
 
   public void print() {
-    System.out.println(make + " " + model);
+    System.out.println(make + " " + model + " " + engine.description());
   }
 }

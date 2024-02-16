@@ -5,9 +5,9 @@ public class Exercise {
     numberOfVehicles = Vehicle.getNumberOfVehicles();
     System.out.println("Anzahl Fahrzeuge: " + numberOfVehicles);
 
-    Vehicle vehicle1 = new Vehicle("Porsche", "911");
-    Vehicle vehicle2 = new Vehicle("MAN", "TGX");
-    Vehicle vehicle3 = new Vehicle("Opel", "Zafira Life");
+    Vehicle vehicle1 = new Vehicle("Porsche", "911", Engine.PETROL);
+    Vehicle vehicle2 = new Vehicle("MAN", "TGX", Engine.ELECTRO);
+    Vehicle vehicle3 = new Vehicle("Opel", "Zafira Life", Engine.GAS);
 
     numberOfVehicles = Vehicle.getNumberOfVehicles();
     System.out.println("Anzahl Fahrzeuge: " + numberOfVehicles);
