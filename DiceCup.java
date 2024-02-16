@@ -6,7 +6,7 @@ public class DiceCup {
     for (int i = 0; i < dices.size(); i++) {
       Dice dice = dices.get(i);
       dice.rollTheDice();
-      System.out.println(dice.id() + " - " + dice.getValue());
+      //System.out.println(dice.id() + " - " + dice.getValue());
     }
   }
 
