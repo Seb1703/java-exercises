@@ -25,12 +25,13 @@ public class SkatCardDeck {
         ArrayList<SkatCard> newDeck = new ArrayList<>();
         Random rand = new Random();
 
-        for(SkatCard card : skatCards){
-            int index = rand.nextInt(skatCards.size() - 1) + 1;
+        int size = skatCards.size();
+        for(int i = 0; i < size; i++){
+            int index = rand.nextInt(size - i);
             newDeck.add(skatCards.get(index));
             skatCards.remove(index);
         }
 
-        skatCards = newDeck;
+        skatCards.addAll(newDeck);
     }
 }
