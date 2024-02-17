@@ -1,7 +1,7 @@
 public class Creature {
 
-  private String name;
-  private int attackValue;
+  final private String name;
+  final private int attackValue;
   private int hitpoints;
 
   public Creature(String name, int attackValue, int hitpoints) {
@@ -22,7 +22,7 @@ public class Creature {
     return hitpoints;
   }
 
-  public void attackCreature(Creature creature) {
+  public boolean attackCreature(Creature creature) {
     creature.hitpoints -= this.attackValue;
     System.out.println(
         this.name
@@ -32,5 +32,7 @@ public class Creature {
             + this.attackValue
             + " Schaden");
     System.out.println(creature.name + " hat noch " + creature.hitpoints + " Lebenspunkte");
+
+    return creature.hitpoints <= 0;
   }
 }
