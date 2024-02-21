@@ -21,8 +21,10 @@ public class Rental {
         vehicles.add(vehicle);
     }
 
-    public void addVehicles(ArrayList<Vehicle> vehicles){
-        this.vehicles.addAll(vehicles);
+    public void addVehicles(Vehicle... vehicles){
+      for (Vehicle v : vehicles) {
+        this.vehicles.add(v);
+      }
     }
 
     public void print(){
