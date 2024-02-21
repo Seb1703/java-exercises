@@ -5,15 +5,20 @@ public class Exercise {
     numberOfVehicles = Vehicle.getNumberOfVehicles();
     System.out.println("Anzahl Fahrzeuge: " + numberOfVehicles);
 
-    Vehicle vehicle1 = new Vehicle("Porsche", "911", Engine.ELECTRO);
-    Vehicle vehicle2 = new Vehicle("MAN", "TGX", Engine.DIESEL);
-    Vehicle vehicle3 = new Vehicle("Opel", "Zafira Life", Engine.DIESEL);
+    Car vehicle1 = new Car("Porsche", "911", Engine.ELECTRO, 2);
+    Truck vehicle2 = new Truck("MAN", "TGX", Engine.DIESEL, 20);
+    Car vehicle3 = new Car("Opel", "Zafira Life", Engine.DIESEL, 7);
 
     numberOfVehicles = Vehicle.getNumberOfVehicles();
     System.out.println("Anzahl Fahrzeuge: " + numberOfVehicles);
 
-    vehicle1.print();
-    vehicle2.print();
-    vehicle3.print();
+    System.out.println(vehicle1.toString());
+    System.out.println(vehicle2.toString());
+    System.out.println(vehicle3.toString());
+
+    vehicle1.accelerate(50);
+    vehicle2.transform();
+    vehicle1.doATurboBoost();
+    vehicle2.transform();
   }
 }
