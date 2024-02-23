@@ -1,6 +1,6 @@
-public class Truck extends Vehicle {
+public final class Truck extends Vehicle {
 
-  private int cargo;
+  private final int cargo;
   private boolean isTransformed;
 
   public Truck(String make, String model, Engine engine, int cargo) {
