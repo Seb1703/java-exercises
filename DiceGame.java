@@ -16,6 +16,7 @@ public class DiceGame {
     scanner = new Scanner(System.in);
     for (Player player : players) {
       player.setActive(true);
+      player.setSpecialAvailable(true);
     }
     numberOfActivePlayers = players.size();
   }
@@ -48,12 +49,47 @@ public class DiceGame {
     dices.add(new Dice(3));
     System.out.println(player.getName() + " hat aktuell " + player.getScore() + " Punkte");
     System.out.print(player.getName() + ", moechtest Du wuerfeln (true, false)?: ");
+    int score = 0;
     if (scanner.nextBoolean()) {
-      diceCup.rollTheDices(dices);
-      int score = 0;
-      for (Dice dice : dices) {
-        score += dice.getValue();
-      }
+      if(player.getSpecialAvailable()){
+        System.out.println(player.getName() + ", möchtest Du einmalig Spezialwürfel verwenden (true, false)?");
+        if(scanner.nextBoolean()){
+          System.out.println(player.getName() + ", welche Spezialwürfel möchtest Du verwenden (1=4-5-6-Würfel, 2=1-2-3-Würfel)?");
+          switch (scanner.nextInt()){
+            case 1:
+              DiceCup hvdc = new DiceCup();
+              ArrayList<Dice> hvd = new ArrayList<>();
+              for(int i = 0; i<3; i++){
+                hvd.add(new HighValueDice(i));
+              }
+              hvdc.rollTheDices(hvd);
+              for (Dice dice : hvd) {
+                score += dice.getValue();
+              }
+              break;
+            case 2:
+              DiceCup lvdc = new DiceCup();
+              ArrayList<Dice> lvd = new ArrayList<>();
+              for(int i = 0; i<3; i++){
+                lvd.add(new LowValueDice(i));
+              }
+              lvdc.rollTheDices(lvd);
+              for (Dice dice : lvd) {
+                score += dice.getValue();
+              }
+              break;
+          }
+        }
+        player.setSpecialAvailable(false);
+      }else{
+          diceCup.rollTheDices(dices);
+          for (Dice dice : dices) {
+            score += dice.getValue();
+          }
+        }
+
+      
+      
       System.out.println(player.getName() + " hat " + score + " Punkte");
       player.setScore(player.getScore() + score);
       System.out.println(player.getName() + " hat insgesamt " + player.getScore() + " Punkte");

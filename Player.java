@@ -3,6 +3,7 @@ public class Player {
   private String name;
   private int score;
   private boolean isActive;
+  private boolean specialAvailable;
 
   public Player(String name) {
     this.name = name;
@@ -26,5 +27,13 @@ public class Player {
 
   public void setActive(boolean isActive) {
     this.isActive = isActive;
+  }
+
+  public boolean getSpecialAvailable(){
+    return specialAvailable;
+  }
+
+  public void setSpecialAvailable(boolean specialAvailable){
+    this.specialAvailable = specialAvailable;
   }
 }
