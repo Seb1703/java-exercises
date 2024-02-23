@@ -1,6 +1,6 @@
 public class Car extends Vehicle {
 
-  private int seats;
+  private final int seats;
 
   public Car(String make, String model, Engine engine, int seats) {
     super(make, model, engine);

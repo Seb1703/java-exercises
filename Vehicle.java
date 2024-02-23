@@ -1,8 +1,8 @@
 public class Vehicle {
 
-  private String make;
-  private String model;
-  private Engine engine;
+  private final String make;
+  private final String model;
+  private final Engine engine;
   protected double speed;
   private static int numberOfVehicles;
 
@@ -23,6 +23,10 @@ public class Vehicle {
 
   public Engine getEngine() {
     return engine;
+  }
+
+  public double getSpeedInKmh(){
+    return speed;
   }
 
   public static int getNumberOfVehicles() {
