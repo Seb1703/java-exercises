@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Rental {
+public class Rental implements Partner{
 
   private String name;
   private ArrayList<Vehicle> vehicles;
@@ -30,7 +30,7 @@ public class Rental {
   }
 
   public void print() {
-    System.out.println(name);
+    //System.out.println(name);
     System.out.println("Unsere Fahrzeuge: ");
     for (Vehicle v : vehicles) {
       v.print();
