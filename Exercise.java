@@ -12,7 +12,7 @@ public class Exercise {
     coordinates.add(new Coordinate(6, 8));
     coordinates.add(new Coordinate(1, 9));
 
-    Collections.sort(coordinates);
+    Collections.sort(coordinates, new CoordinateByDistanceToOriginComparator());
 
     for (Coordinate c : coordinates) {
       System.out.println(c + ": " + c.getDistanceToOriginPoint());

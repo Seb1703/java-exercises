@@ -1,4 +1,4 @@
-public class CoordinateByDistanceToOriginComparator implements Comparator {
+public class CoordinateByDistanceToOriginComparator implements Comparator<Coordinate> {
     public int compare(Coordinate c1, Coordinate c2){
         if(c1.getDistanceToOriginPoint() < c2.getDistanceToOriginPoint()){
             return -1;
