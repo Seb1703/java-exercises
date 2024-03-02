@@ -17,6 +17,7 @@ public class Exercise {
     company.addEmployee(new Employee(4, new Person("Peter Schneider"), 55000));
     company.addEmployee(new Employee(5, new Person("Miriam Albers"), 90000));
 
+<<<<<<< HEAD
     try{
       e1.setSalary(49000);
     }catch(Exception e){
@@ -28,5 +29,8 @@ public class Exercise {
     }
 
     company.print();
+=======
+    System.out.println(company.toString());
+>>>>>>> 5a598f54730dca7cc177d45e73c514e4fa9fdca0
   }
 }
