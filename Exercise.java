@@ -17,6 +17,16 @@ public class Exercise {
     company.addEmployee(new Employee(4, new Person("Peter Schneider"), 55000));
     company.addEmployee(new Employee(5, new Person("Miriam Albers"), 90000));
 
+    try{
+      e1.setSalary(49000);
+    }catch(Exception e){
+      if(e instanceof SalaryIncreaseTooHighException){
+        System.out.println("Das Gehalt ist zu hoch");
+      }else if(e instanceof SalaryDecreaseException){
+        System.out.println("Das Gehalt ist geringer als das aktuelle");
+      }
+    }
+
     company.print();
   }
 }
