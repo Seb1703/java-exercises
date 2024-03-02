@@ -29,14 +29,23 @@ public abstract class Vehicle {
     return numberOfVehicles;
   }
 
-  public final void accelerate(int value) {
-    speed += value;
-    System.out.println(make + " " + model + " beschleunigt auf " + speed + "km/h");
+  public final void accelerate(int value) throws InvalidValueException{
+      if(value < 0){
+        throw new InvalidValueException();
+      }else{
+        speed += value;
+        System.out.println(make + " " + model + " beschleunigt auf " + speed + "km/h");
+      }
+    
   }
 
-  public final void brake(int value) {
-    speed -= value;
-    System.out.println(make + " " + model + " bremst auf " + speed + "km/h ab");
+  public final void brake(int value) throws InvalidValueException {
+    if(speed - value < 0){
+      throw new InvalidValueException();
+    }else{
+      speed -= value;
+      System.out.println(make + " " + model + " bremst auf " + speed + "km/h ab");
+    }
   }
 
   public abstract void print();

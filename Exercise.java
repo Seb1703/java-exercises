@@ -14,5 +14,18 @@ public class Exercise {
     rental.addVehicle(car2);
 
     travelAgency.print();
+
+    try{
+      car1.accelerate(5);
+    }catch(InvalidValueException e){
+      System.out.println("Der Wert muss positiv sein!");
+    }
+
+    try{
+      car1.brake(6);
+    }catch(InvalidValueException e){
+      System.out.println("Der Wert muss positiv sein!");
+    }
+
   }
 }
