@@ -1,4 +1,4 @@
-package ExamTask04_2023.ExamTask06_2023;
+package ExamTask06_2023;
 
 public class ExamTask06 {
 	public static void main(String[] args) {
