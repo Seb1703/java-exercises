@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Company {
-	private ArrayList<Human> employees;
+	private final ArrayList<Human> employees;
 		
 	public Company(){
 		employees = new ArrayList<>();
