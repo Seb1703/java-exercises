@@ -22,7 +22,7 @@ public class Crate <T extends Bottle>{
     }
   }
 
-  public Bottle takeBottle(int box) throws CrateIndexOutOfBoundsException {
+  public T takeBottle(int box) throws CrateIndexOutOfBoundsException {
     if (box < 1 || box > 6) {
       throw new CrateIndexOutOfBoundsException();
     }
