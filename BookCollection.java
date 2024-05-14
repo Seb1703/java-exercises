@@ -38,8 +38,13 @@ public record BookCollection(HashMap<Author, List<Book>> collection) {
     }
 
     public Book getBookByTitle(String title){
-      for(Book b : List<Book> collection.values()){
-
+      for(List<Book> books : collection.values()){
+        for(Book b : books){
+          if (b.title() == title){
+            return b;
+          }
+        }
       }
+      return null;
     }
 }
