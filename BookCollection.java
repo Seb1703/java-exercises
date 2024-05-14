@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -37,6 +38,8 @@ public record BookCollection(HashMap<Author, List<Book>> collection) {
     }
 
     public Book getBookByTitle(String title){
+      for(Book b : List<Book> collection.values()){
 
+      }
     }
 }
