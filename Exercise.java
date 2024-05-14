@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Optional;
 
 public class Exercise {
 
@@ -8,6 +9,11 @@ public class Exercise {
     myBook.addEntry(new Person("Jan"), new TelephoneNumber("5678"));
     myBook.addEntry(new Person("Lisa"), new TelephoneNumber("9123"));
 
-    System.out.println(myBook.getTelephoneNumber("Lisa").value());
+    Optional<TelephoneNumber> number = myBook.getTelephoneNumber("Liwsa");
+    if(number.isPresent()){
+      System.out.println(number.get().value());
+    } else{
+      System.out.println("Leider nicht gefunden");
+    }
   }
 }
