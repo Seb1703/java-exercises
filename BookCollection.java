@@ -8,14 +8,10 @@ import java.util.Optional;
 
 public record BookCollection(HashMap<Author, List<Book>> collection) {
     public void addAuthor(Author author) throws DuplicateKeyException{
-        try{
-            if(collection.containsKey(author)){
-                throw new DuplicateKeyException();
-            } else{
-                collection.put(author, new ArrayList<>());
-            }
-        } catch (DuplicateKeyException dke){
-            System.out.println(dke.getMessage());
+        if(collection.containsKey(author)){
+            throw new DuplicateKeyException();
+        } else{
+            collection.put(author, new ArrayList<>());
         }
     }
 
