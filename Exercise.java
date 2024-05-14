@@ -9,13 +9,13 @@ public class Exercise {
     BookCollection myCollection = new BookCollection(new HashMap<>());
 
     try{
-      Author danBrown = new Author("Dan brown");
+      collection.addAuthor(new Author("Dan brown"));
     } catch (DuplicateKeyException dke){
       System.out.println(dke.getMessage());
     }
 
-    myCollection.addBook(danBrown, new Book("Illuminati"));
-    myCollection.addBook(danBrown, new Book("Illuminati"));
+    myCollection.addBook("Dan Brown", new Book("Illuminati"));
+    myCollection.addBook("Dan Brown", new Book("Illuminati"));
     myCollection.addBook(new Author("Goethe"), new Book("Faust"));
 
     Optional<Author> mostDeligentAuthor = myCollection.getMostDiligenAuthor();
