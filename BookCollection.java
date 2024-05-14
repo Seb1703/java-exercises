@@ -1,6 +1,8 @@
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-public record BookCollection(Map<Author, ArrayList<Book>> collection) {
+public record BookCollection(HashMap<Author, ArrayList<Book>> collection) {
     public void addAuthor(Author author) throws DuplicateKeyException{
         try{
             if(collection.containsKey(author)){
