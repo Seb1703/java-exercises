@@ -1,6 +1,8 @@
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+
 
 public record BookCollection(HashMap<Author, ArrayList<Book>> collection) {
     public void addAuthor(Author author) throws DuplicateKeyException{
@@ -23,10 +25,15 @@ public record BookCollection(HashMap<Author, ArrayList<Book>> collection) {
     }
 
     public Author getMostDiligenAuthor(){
-        Author mostDiligentAuthor;
-        for(Set a : collection.entrySet()){
-            if()
+        Author mostDiligentAuthor = null;
+        int mostBooks = 0;
+        for(Entry<Author, ArrayList<Book>> entry : collection.entrySet()){
+            if(entry.getValue().size() > mostBooks){
+              mostDiligentAuthor = entry.getKey();
+              mostBooks = entry.getValue().size();
+            }
         }
+        return mostDiligentAuthor;
     }
 
     public Book getBookByTitle(String title){
