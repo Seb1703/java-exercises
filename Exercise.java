@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.function.Consumer;
 
 public class Exercise {
 
@@ -14,6 +15,19 @@ public class Exercise {
     students.add(new Student("Yannik", 28));
     students.add(new Student("Hanni", 29));
     students.add(new Student("Manu", 30));
+
+    students.forEach(
+      new Consumer<>(){
+        @Override
+        public void accept(Student student){
+          if(student.age() > 26){
+            System.out.println(student);
+          }
+        }
+      }
+    );
+
+    System.out.println("..........");
 
     students.forEach(student -> {
       if(student.age() > 26){
