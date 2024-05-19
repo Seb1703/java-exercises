@@ -14,5 +14,11 @@ public class Exercise {
     students.add(new Student("Yannik", 28));
     students.add(new Student("Hanni", 29));
     students.add(new Student("Manu", 30));
+
+    students.forEach(student -> {
+      if(student.age() > 26){
+        System.out.println(student);
+      }
+    });
   }
 }
