@@ -19,7 +19,9 @@ public class FilteredStudents {
 
   public void forEach(Consumer<Student> consumer) {
     for (Student student : students) {
-      consumer.accept(student);
+      if(mandatoryFilter.test(student)){
+        consumer.accept(student);
+      }
     }
   }
 }
