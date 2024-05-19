@@ -11,12 +11,7 @@ public class Exercise {
       return true;
     });
 
-    FilteredStudents teenStudents = new FilteredStudents(student-> {
-      if(student.age >= 18){
-        return false;
-      }
-      return true;
-    });
+    FilteredStudents teenStudents = new FilteredStudents(student -> student.age < 18);
 
     adultStudents.add(steffen);
     adultStudents.add(kid);
