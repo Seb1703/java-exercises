@@ -7,21 +7,13 @@ public class Exercise {
     FilteredStudents adultStudents = new FilteredStudents((student) -> student.age >= 18);
     adultStudents.add(steffen);
     adultStudents.add(kid);
-    adultStudents.forEach(student -> {
-      if(student.age >= 18){
-        System.out.println(student.name.toUpperCase());
-      }
-    });
+    adultStudents.forEach(student -> System.out.println(student.name.toUpperCase()));
 
     System.out.println("-----------------------");
 
     FilteredStudents teenStudents = new FilteredStudents(student -> student.age < 18);
     teenStudents.add(steffen);
     teenStudents.add(kid);;
-    teenStudents.forEach(student -> {
-      if(student.age < 18){
-        System.out.println(student.name.toLowerCase());
-      }
-    });
+    teenStudents.forEach(student -> System.out.println(student.name.toLowerCase()));
   }
 }
