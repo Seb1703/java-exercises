@@ -1,8 +1,6 @@
 import java.util.HashMap;
 import java.util.Optional;
 
-import javax.swing.plaf.synth.SynthScrollBarUI;
-
 public class Exercise {
 
   public static void main(String[] args) {
