@@ -2,8 +2,6 @@ package ExamTask07_2023;
 
 import java.util.ArrayList;
 
-import CablePhone;
-
 public class ExamTask07 {
 	public static void main(String[] args){
 		CablePhone cablePhone1 = new CablePhone(EnergySource.BATTERY, true, true);

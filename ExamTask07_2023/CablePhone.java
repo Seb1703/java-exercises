@@ -1,8 +1,4 @@
-
-
-import ExamTask07_2023.EnergySource;
-import ExamTask07_2023.Phone;
-
+package ExamTask07_2023;
 public class CablePhone extends Phone{
 	private boolean pluggedIn;
 	private boolean poweredOn;

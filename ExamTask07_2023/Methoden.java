@@ -1,3 +1,4 @@
+package ExamTask07_2023;
 public class Methoden {
     //Vorlesung v. 19.01.2024
 
