@@ -2,27 +2,24 @@ package Java2_Klausurvorbereitung.Probeklausur.Stream;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public record University(List<Professor> professors, List<Student> students) {
     public List<Double> q1(){
         return students.stream()
             .map(s -> s.grades().values().stream()
-                .mapToDouble(Double::valueOf).average()) //Average gibt Optional<Double> zurück
-            .filter(g -> g.isPresent())
-            .map(optionalDouble -> optionalDouble.getAsDouble())
-            .toList();
+                .mapToDouble(g -> g)
+                .average().orElse(0))
+            .toList(); 
     }
 
-    //niemals == bei String Vergleichen!!!
     public void q2(){
         professors.stream()
             .filter(p -> p.courses().stream()
                 .anyMatch(c -> c.equalsIgnoreCase("math")))
             .sorted((p1, p2) -> Integer.compare(p2.age(), p1.age()))
             .limit(3)
-            .forEach(p -> System.out.println("blabla " + p.name()));
+            .forEach(p -> System.out.println("6138 Minuten Bazinga Spaß and dich " + p.name() + "."));
     }
 
     public Map<Integer, List<Professor>> q3(){
@@ -34,19 +31,20 @@ public record University(List<Professor> professors, List<Student> students) {
     public List<List<Student>> q4(String professorName){
         return professors.stream()
             .filter(p -> p.name().equals(professorName))
-            .map(p -> p.students.stream()
-                .filter(student -> student.grades().keySet().stream()
-                    .anyMatch(course -> p.courses().stream()
-                        .anyMatch(c -> course.equals(c))))
+            .map(p -> students.stream()
+                .filter(s -> s.grades().keySet().stream()
+                    .anyMatch(sc -> p.courses().stream()
+                        .anyMatch(pc -> pc.equals(sc))))
                 .toList())
             .toList();
-        }
+    }
 
     public List<String> q5(){
         return students.stream()
             .filter(s -> s.grades().values().stream()
-                .anyMatch(grade -> grade >= 1.5))
+                .anyMatch(g -> g >= 1.5))
             .map(s -> s.name().toLowerCase())
-            .distinct().toList();
+            .distinct()
+            .toList();
     }
 }
