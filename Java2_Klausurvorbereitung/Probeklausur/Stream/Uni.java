@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public record University(List<Professor> professors, List<Student> students) {
+public record Uni(List<Professor> professors, List<Student> students) {
     public List<Double> q1(){
         return students().stream()
             .map(s -> s.grades().values().stream()
