@@ -39,8 +39,9 @@ public class Task03 {
         // q5: Studenten mit einer Note von 1,5 oder schlechter
         System.out.println("Studenten mit Note 1,5 oder schlechter: " + university.q5());
 
+        System.out.println("---------");
         System.out.println(university.q6());
 
-        System.out.println(university.q7());
+        System.out.println(university.q7("Eva"));
     }
 }
