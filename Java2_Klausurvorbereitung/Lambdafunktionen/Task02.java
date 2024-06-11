@@ -1,9 +1,11 @@
 package Java2_Klausurvorbereitung.Lambdafunktionen;
 
-public class Task2 {
+import javax.swing.event.SwingPropertyChangeSupport;
+
+public class Task02 {
     public static void main(String[] args) {
         Data.getAnimals()
-            .filter(animal -> animal.size() > 50)
+            .filter(Helper.isHigherThan(50))
             .map(Helper.toOutput)
             .forEach(System.out::println);
     }
